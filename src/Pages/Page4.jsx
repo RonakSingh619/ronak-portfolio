@@ -1,70 +1,43 @@
 import React from 'react'
+import { IoIosSend, IoMdSend } from "react-icons/io";
 
 const Page4 = () => {
 
-  const weAreExpertCards = [
-    {
-      image: "./images/star.png",
-      title: "Market Trends Analysis",
-      descr: "Predictive insights to guide real estate strategies."
-    },
-    {
-      image: "./images/flash.png",
-      title: "Targeted Buyer Persona",
-      descr: "Understand and connect with your ideal property buyers."
-    },
-    {
-      image: "./images/tick.png",
-      title: "Competitor Insights",
-      descr: "Stand out in the property market with informed strategies."
-    },
-    {
-      image: "./images/star.png",
-      title: "Visual Content Appeal",
-      descr: "Captivate buyers with appealing visuals and immersive experiences."
-    }
-  ]
-  
   return (
-    <div>
-      
-      <div className='mt-[10rem] h-screen'> 
+    <div className='flex justify-center items-center h-screen'>
+      <div className='flex w-full'>
 
-          {/* headings */}
-          <div className='flex flex-col justify-center'>
-              <center>
-              <label className='text-[32px] font-bold'>Navigating Real Estate's Digital Landscape</label>
-              <p className='text-[24px] mt-[1rem]'> Insights for Real Estate Marketing Advantage</p>
-              </center>
+        <div data-aos-once="true" data-aos='fade-right' className='w-[50%]'>
+          <label className='p-0 text-white text-[64px] font-serif font-bold'>Got a project in <label className='w-[60%] p-0 text-[#00ADB5] text-[64px] font-serif font-bold'>mind?</label><br /></label>
+          <div className='flex'>
+            <img className='ml-[2rem] w-[112px] h-[169px]' src="./images/Vector 186.svg" alt="" />
+            <img className='ml-[2rem] w-[255px] h-[348px]' src="./images/Group 2372.svg" alt="" />
+          </div>
+        </div>
+
+        <div className='w-[50%] flex flex-col'>
+
+          <div className='flex justify-between'>
+            <div data-aos-once="true" data-aos='fade-down' className='mx-3 w-full'>
+              <label className='p-0 text-white text-[18px] font-serif font-bold'>Your name</label><br />
+              <input className='mt-2 placeholder:font-bold text-white placeholder:text-[#adabab] w-full bg-[#393E46] rounded-lg py-2 px-5' type="text" placeholder='Name' />
+            </div>
+            <div data-aos-once="true" data-aos='fade-down' className='mx-3 w-full'>
+              <label className='p-0 text-white text-[18px] font-serif font-bold'>Your email</label><br />
+              <input className='mt-2 placeholder:font-bold text-white placeholder:text-[#adabab] w-full bg-[#393E46] rounded-lg py-2 px-5' type="email" placeholder='Email' />
+            </div>
+          </div><br />
+
+          <div data-aos-once="true" data-aos='fade-up' className='mx-3 h-full'>
+            <label className='p-0 text-white text-[18px] font-serif font-bold'>Your message</label><br />
+            <textarea className='mt-2 placeholder:font-bold text-white placeholder:text-[#adabab] w-full bg-[#393E46] h-[85%] rounded-lg py-3 px-5' type="text" placeholder='Message' />
           </div>
 
-          {/* list cards & img */}
-          <div className='flex mt-[5rem] w-full h-[385px] justify-center'>
+          <button className='mx-3 w-[30%] bg-[#00ADB5] duration-200 hover:bg-[#222831] border-[#00ADB5] border-2 hover:border-[#00ADB5] shadow-sm text-white text-[15px] rounded-4xl cursor-pointer py-2 px-5 flex justify-center items-center'>Send Message <IoIosSend className='ml-3' size={25}/></button>
 
-              <div className='ml-[39px] h-[385px] w-[733px]'>
-
-                {weAreExpertCards.map((obj, i) => 
-                  <div key={obj.title} className='w-[586px] h-[153px] shadow-lg flex mb-[16px] rounded-xl items-center'>
-                    <div className='ml-[32px] mr-[16px]'>
-                      <img className='h-[52px] w-[52px]' src={obj.image} alt="" />
-                    </div>
-                    <div>
-                      <label className='text-[24px] font-bold'>{obj.title}</label>
-                      <p className='text-[16px] mt-[0.5rem]'>{obj.descr}</p>
-                    </div>
-                  </div>
-                )}
-
-              </div>
-
-              {/* <div> */}
-                <img className='h-[556px] w-[746px]' src="./images/rafiki.png" alt="" />
-              {/* </div> */}
-
-          </div>
+        </div>
         
       </div>
-      
     </div>
   )
 }

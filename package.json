@@ -1,6 +1,6 @@
 {
   "name": "myfrontend",
-  "homepage": "https://RonakSingh619.github.io/Osumare-Assignment/",
+  "homepage": "https://RonakSingh619.github.io/ronak-portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,10 +14,12 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
+    "aos": "^2.3.4",
     "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "react-type-animation": "^3.2.0",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {

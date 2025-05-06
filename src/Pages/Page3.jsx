@@ -1,83 +1,129 @@
-import React from 'react'
+import React, { useState } from 'react'
+import 'aos/dist/aos.css'
 
 const Page3 = () => {
-
-  const serviceOfferingscardsData = [
+  
+  const [ TabSelected, setTabSelected] = useState(1)
+  
+  const tabsInfo = [
     {
-      image: "./images/Group 117.png",
-      title: "Automotive SEO",
-      descr: "Drive Your Success with Automotive SEO: Ignite Online Visibility and Outrace the Competition. Accelerate Your Business Growth Today"
+      id: 1,
+      tab: "FullStack",
+      body: <div className='flex flex-wrap justify-center'>
+                {
+                  [
+                    {
+                      title: "Password Generator",
+                      image: "./tabImages/fullstack/passGen.png"
+                    },
+                    {
+                      title: "Client Website",
+                      image: "./tabImages/fullstack/chary.png"
+                    },
+                    {
+                      title: "Portfolio",
+                      image: "./tabImages/fullstack/portfolio.png"
+                    }
+                  ].map(({ title, image }, i) => 
+                      <div data-aos-once="true" data-aos="fade-up" className='backdrop-blur-sm shadow-lg bg-white/5 p-7 mx-5 my-5 rounded-2xl flex justify-center' key={title}>
+                        <div className='relative'>
+                          <img className='w-[265px] h-[158px] hover:opacity-50 duration-200 peer' src={image} />
+                          <div className={`bg-black/50 text-white absolute bottom-0 w-full h-[30%] opacity-0 ease-in-out duration-500 peer-hover:opacity-100 flex justify-center items-center`}>{title}</div>
+                        </div>
+                      </div>
+                  )
+                }
+            </div>,
     },
     {
-      image: "./images/Group 117 (1).png",
-      title: "PPC Precision",
-      descr: "Maximize visibility and drive quality traffic with meticulously targeted Pay-Per-Click campaigns."
+      id: 2,
+      tab: "DataAnalytics",
+      body: <div className='flex flex-wrap justify-center'>
+                {
+                  [
+                    {
+                      title: "ML Algorithm",
+                      image: "./tabImages/dataAnalytics/ML.png"
+                    },
+                    {
+                      title: "PowerBI Dashboard",
+                      image: "./tabImages/dataAnalytics/powerbi.png"
+                    }
+                  ].map(({ title, image }, i) => 
+                      <div data-aos-once="true" data-aos="fade-up" className='backdrop-blur-sm shadow-lg bg-white/5 p-7 mx-5 my-5 rounded-2xl flex justify-center' key={title}>
+                        <div className='relative'>
+                          <img className='w-[265px] h-[158px] hover:opacity-50 duration-200 peer' src={image} />
+                          <div className={`bg-black/50 text-white absolute bottom-0 w-full h-[30%] opacity-0 ease-in-out duration-500 peer-hover:opacity-100 flex justify-center items-center`}>{title}</div>
+                        </div>
+                      </div>
+                  )
+                }
+            </div>,
     },
     {
-      image: "./images/Group 117 (2).png",
-      title: "Social Acceleration",
-      descr: " Engage and influence your audience across social media platforms, amplifying your brand's presence and connection."
+      id: 3,
+      tab: "Python",
+      body: <div className='flex flex-wrap justify-center'>
+                {
+                  [
+                    {
+                      title: "Calories Tracker",
+                      image: "./tabImages/python/calcal.png"
+                    },
+                    {
+                      title: "Pdf-To-Excel",
+                      image: "./tabImages/python/pdfToExcel.png"
+                    }
+                  ].map(({ title, image }, i) => 
+                      <div data-aos-once="true" data-aos="fade-up" className='backdrop-blur-sm shadow-lg bg-white/5 p-7 mx-5 my-5 rounded-2xl flex justify-center' key={title}>
+                        <div className='relative'>
+                          <img className='w-[265px] h-[158px] hover:opacity-50 duration-200 peer' src={image} />
+                          <div className={`bg-black/50 text-white absolute bottom-0 w-full h-[30%] opacity-0 ease-in-out duration-500 peer-hover:opacity-100 flex justify-center items-center`}>{title}</div>
+                        </div>
+                      </div>
+                  )
+                }
+            </div>,
     },
-    {
-      image: "./images/Group 117 (3).png",
-      title: "Content Excellence",
-      descr: "Craft compelling, automotive-specific content that resonates with enthusiasts and drives engagement."
-    },
-    {
-      image: "./images/Group 117 (4).png",
-      title: "Web Design",
-      descr: "Transform visitors into customers with high-performance websites designed for seamless user experiences and increased conversions."
-    },
-    {
-      image: "./images/Group 117 (5).png",
-      title: "Data-Driven Insights",
-      descr: "Leverage data to refine your strategies, making informed decisions that drive revenue growth."
-    },
-    {
-      image: "./images/Group 117 (6).png",
-      title: "End-to-End Solutions",
-      descr: "From initial awareness to post-purchase loyalty, we offer full-funnel solutions that guide customers through every step of their journey."
-    },
-    {
-      image: "./images/Group 117 (7).png",
-      title: "Video marketing",
-      descr: "Unleash the Power of Video Marketing: Captivate, Engage, and Elevate Your Brand with Compelling Visual Stories."
-    }
   ]
   
   return (
-    <div>
-      
-      <div className='mt-[15rem] bg-gray-100 relative'><br /><br /><br />
-        {/* Headings */}
-          <div className='flex flex-col justify-center'>
-            <center>
-            <label className='text-[32px] font-bold'>Our Service Offerings</label>
-            <p className='text-[24px] mt-[1rem]'> Strategies that Drive Property Market Excellence</p>
-            </center>
-          </div>
+    <div className="h-screen flex">
 
-        {/* Cards */}
-          <div className='flex justify-center mt-5'>
-            <div className='mt-[4rem] w-[1350px] h-[815px] flex flex-wrap'>
-              {serviceOfferingscardsData.map((obj, i) => 
-                  <div className='w-[297px] h-[239px] shadow-xl rounded-sm mx-5 ' key={obj.title}>
-                      <center>
-                        <img className='h-[52px] w-[52px]' src={obj.image} alt="" />
-                        <label className='text-[18px] font-bold'>{obj.title}</label>
-                        <p className='text-[14px] mt-[1rem] px-5'>{obj.descr}</p>
-                      </center>
-                  </div>
-              )}  
+        {/* Main Section */}
+        <div className='mt-[5rem] w-full'>
+        {/* bg-white/5 p-2 backdrop-blur-sm */}
+            <div className='flex'>
+              <label className='p-0 xl:text-white lg:text-red-700 md:text-green-700 text-[64px] font-serif font-bold sm:text-yellow-500'>My recent <label className='w-[60%] p-0 text-[#00ADB5] text-[64px] font-serif font-bold'>works</label><br /></label>
             </div>
-          </div>
-          
-          <center>
-            <button className="mr-10 mt-[22px] border-1 text-[18px] font-semibold w-[233px] h-[61px] text-white bg-blue-500 border-blue-500 rounded-[2rem] hover:border-blue-500 hover:bg-white hover:text-blue-500 duration-200 cursor-pointer">Get Started</button>
-          </center><br /><br /><br />
-            
-      </div>
-      
+
+
+
+
+
+            {/* ----------Tabs---------- */}
+            <div className='mt-[2rem] w-full'>
+              {/* Head */}
+              <div className='flex'>
+                {tabsInfo.map(({ tab, id }, i) => 
+                    <div key={tab} onClick={() => setTabSelected(id)} className={`mx-2 text-white p-2 backdrop-blur-sm rounded-4xl cursor-pointer px-5 shadow-lg ${TabSelected == id? "bg-[#00ADB5]" : "bg-white/5"} hover:shadow-[#00ADB5] duration-200`}>{tab}</div>
+                  )}
+              </div>
+              {/* Body */}
+              <div className='mt-[2rem]'>
+                  {tabsInfo.map(({ id, body }, i) => id === TabSelected? <div key={id}>{body}</div> : <div key={id}></div> )}
+                  {/* {tabsInfo[0].body} */}
+              </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
     </div>
   )
 }
