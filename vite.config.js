@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  // base: "/ronak-portfolio",
+  base: "/ronak-portfolio",
 })
