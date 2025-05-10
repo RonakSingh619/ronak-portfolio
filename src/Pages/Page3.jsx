@@ -27,8 +27,8 @@ const Page3 = () => {
                   ].map(({ title, image }, i) => 
                       <div data-aos-once="true" data-aos="fade-up" className='backdrop-blur-sm shadow-lg bg-white/5 p-7 mx-5 my-5 rounded-2xl flex justify-center' key={title}>
                         <div className='relative'>
-                          <img className='w-[265px] h-[158px] hover:opacity-50 duration-200 peer' src={image} />
-                          <div className={`bg-black/50 text-white absolute bottom-0 w-full h-[30%] opacity-0 ease-in-out duration-500 peer-hover:opacity-100 flex justify-center items-center`}>{title}</div>
+                          <img className='w-[265px] h-[158px] hover:opacity-50 focus:opacity-50 duration-200 peer' tabIndex={0} src={image} />
+                          <div className={`bg-black/50 text-white absolute bottom-0 w-full h-[30%] opacity-0 ease-in-out duration-500 peer-focus:opacity-100 peer-hover:opacity-100 flex justify-center items-center`}>{title}</div>
                         </div>
                       </div>
                   )
@@ -52,8 +52,8 @@ const Page3 = () => {
                   ].map(({ title, image }, i) => 
                       <div data-aos-once="true" data-aos="fade-up" className='backdrop-blur-sm shadow-lg bg-white/5 p-7 mx-5 my-5 rounded-2xl flex justify-center' key={title}>
                         <div className='relative'>
-                          <img className='w-[265px] h-[158px] hover:opacity-50 duration-200 peer' src={image} />
-                          <div className={`bg-black/50 text-white absolute bottom-0 w-full h-[30%] opacity-0 ease-in-out duration-500 peer-hover:opacity-100 flex justify-center items-center`}>{title}</div>
+                          <img className='w-[265px] h-[158px] hover:opacity-50 focus:opacity-50 duration-200 peer' tabIndex={0} src={image} />
+                          <div className={`bg-black/50 text-white absolute bottom-0 w-full h-[30%] opacity-0 ease-in-out duration-500 peer-focus:opacity-100 peer-hover:opacity-100 flex justify-center items-center`}>{title}</div>
                         </div>
                       </div>
                   )
@@ -77,8 +77,8 @@ const Page3 = () => {
                   ].map(({ title, image }, i) => 
                       <div data-aos-once="true" data-aos="fade-up" className='backdrop-blur-sm shadow-lg bg-white/5 p-7 mx-5 my-5 rounded-2xl flex justify-center' key={title}>
                         <div className='relative'>
-                          <img className='w-[265px] h-[158px] hover:opacity-50 duration-200 peer' src={image} />
-                          <div className={`bg-black/50 text-white absolute bottom-0 w-full h-[30%] opacity-0 ease-in-out duration-500 peer-hover:opacity-100 flex justify-center items-center`}>{title}</div>
+                          <img className='w-[265px] h-[158px] hover:opacity-50 focus:opacity-50 duration-200 peer' tabIndex={0} src={image} />
+                          <div className={`bg-black/50 text-white absolute bottom-0 w-full h-[30%] opacity-0 ease-in-out duration-500 peer-focus:opacity-100 peer-hover:opacity-100 flex justify-center items-center`}>{title}</div>
                         </div>
                       </div>
                   )
@@ -88,18 +88,14 @@ const Page3 = () => {
   ]
   
   return (
-    <div className="h-screen flex">
+    <div className="md:h-screen md:mb-0 mb-[5rem] flex">
 
         {/* Main Section */}
         <div className='mt-[5rem] w-full'>
         {/* bg-white/5 p-2 backdrop-blur-sm */}
             <div className='flex'>
-              <label className='p-0 xl:text-white lg:text-red-700 md:text-green-700 text-[64px] font-serif font-bold sm:text-yellow-500'>My recent <label className='w-[60%] p-0 text-[#00ADB5] text-[64px] font-serif font-bold'>works</label><br /></label>
+              <label className='p-0 text-white text-[64px] font-serif font-bold'>My recent <label className='w-[60%] p-0 text-[#00ADB5] text-[64px] font-serif font-bold'>works</label><br /></label>
             </div>
-
-
-
-
 
             {/* ----------Tabs---------- */}
             <div className='mt-[2rem] w-full'>
@@ -114,13 +110,7 @@ const Page3 = () => {
                   {tabsInfo.map(({ id, body }, i) => id === TabSelected? <div key={id}>{body}</div> : <div key={id}></div> )}
                   {/* {tabsInfo[0].body} */}
               </div>
-
             </div>
-
-
-
-
-
 
         </div>
 

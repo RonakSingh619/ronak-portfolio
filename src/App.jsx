@@ -5,9 +5,11 @@ import Page2 from './Pages/Page2.jsx'
 import Page3 from './Pages/Page3.jsx'
 import Page4 from './Pages/Page4.jsx'
 import Aos from 'aos'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './CSS/styles.css'
 import EducationPage from './Pages/EducationPage.jsx'
+import MyDialogueBox from './UtilityComponents/MyDialogueBox.jsx'
+import MyEmailOpenerTest from './UtilityComponents/MyEmailOpenerTest.jsx'
 
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
   }, [])
 
   return (
-    <div className='container mx-auto'>
+    <div className='md:container md:mx-auto contain-content w-[90%] mx-auto'>
       
       {/*---------------------- Page: 1 ----------------------*/}
       <Page1 />
@@ -40,8 +42,7 @@ function App() {
 
 
 
-
-
+{/* <MyEmailOpenerTest /> */}
 {/* <div className='mt-[30rem]'></div> */}
 
     </div>

@@ -62,14 +62,17 @@ const EducationPage = () => {
 
         <div className='flex flex-col justify-center mx-auto mt-[3rem] mb-[13rem]'>
             {educationDetails.map(({ title, desc, icon }, i) => 
-                <div data-aos="fade-up" className='w-[500px] h-[500px] rounded-2xl bg-white mb-[5rem] flex flex-col group cursor-pointer shadow-inner'>
-                    <div className='text-white group-hover:text-3xl group-hover:rounded-b-none group-hover:h-[20%] duration-500 text-[80px] flex flex-col justify-center rounded-2xl items-center h-full w-full bg-gradient-to-t from-[#00ADB5] via-teal-300 to-[#00ADB5]'>
-                        <span className='group-hover:hidden'>{icon}</span>
+                <div key={title} data-aos="fade-up" className='w-[350px] md:w-[500px] h-[350px] md:h-[500px] rounded-2xl bg-white mb-[5rem] flex flex-col group cursor-pointer shadow-inner' tabIndex={0}>
+                    <div className='text-white md:group-hover:text-3xl group-focus:text-3xl md:group-hover:rounded-b-none group-focus:rounded-b-none md:group-hover:h-[20%] group-focus:h-[20%] duration-700 text-[50px] nd:text-[80px] flex flex-col justify-center rounded-2xl items-center h-full w-full bg-gradient-to-t from-[#00ADB5] via-teal-300 to-[#00ADB5]'>
+                        <span className='md:group-hover:hidden group-focus:hidden'>{icon}</span>
                         {title}
                     </div>
-                    <div className='p-5 hidden group-hover:block ease-in-out duration-500 cursor-text flex-col items-center'>
+                    <div className='p-5 hidden md:group-hover:block group-focus:block ease-in-out duration-700 cursor-text flex-col items-center'>
                         {[0,1,2].map((index) =>
-                            <span className='flex my-5 text-xl'>{desc.icons[index]} : {desc.details[index]}</span>
+                            <div key={index} className='flex items-center'>
+                                <span className='flex my-5 mx-2 text-sm md:text-xl'>{desc.icons[index]} :</span>
+                                <span className='flex my-5 mx-2 text-sm md:text-xl'>{desc.details[index]}</span>
+                            </div>
                         )}
                     </div>
                 </div>
